@@ -67,6 +67,5 @@
 
 ### Association
 
-- has_many :users
-- belongs_to :products
+- belongs_to :purchase
 - belongs_to :prefecture
