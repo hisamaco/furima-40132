@@ -23,11 +23,11 @@
 |-----------------|------------|--------------------------------|
 | product_name    | string     | null: false                    |
 | description     | text       | null: false                    |
-| category        | string     | null: false                    |
-| condition       | string     | null: false                    |
-| shipping_cost   | string     | null: false                    |
-| origin_location | string     | null: false                    |
-| days_to_ship    | string     | null: false                    |
+| category        | integer    | null: false, foreign_key: true |
+| condition       | integer    | null: false, foreign_key: true |
+| shipping_cost   | integer    | null: false, foreign_key: true |
+| prefecture      | integer    | null: false, foreign_key: true |
+| days_to_ship    | integer    | null: false, foreign_key: true |
 | price           | integer    | null: false                    |
 | user            | references | null: false, foreign_key: true |
 
@@ -35,6 +35,11 @@
 
 - belongs_to :user
 - has_one :shipment
+- belongs_to :category
+- belongs_to :condition
+- belongs_to :shipping_cost
+- belongs_to :prefecture
+- belongs_to :days_to_ship
 
 ## purchasesテーブル
 
