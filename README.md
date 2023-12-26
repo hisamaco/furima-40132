@@ -34,7 +34,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :shipments
+- has_one :shipment
 
 ## shipmentsテーブル
 | Column          | type       | options                        |
