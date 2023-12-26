@@ -52,6 +52,7 @@
 
 - belongs_to :user
 - belongs_to :product
+- has_one :shipment
 
 ## shipmentsテーブル
 | Column          | type       | options                        |
