@@ -33,7 +33,7 @@
 
 ### Association
 
-- has_many :users
+- belongs_to :user
 - has_one :shipments
 
 ## shipmentsテーブル
