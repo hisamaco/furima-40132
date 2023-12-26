@@ -36,6 +36,18 @@
 - belongs_to :user
 - has_one :shipment
 
+## purchasesテーブル
+
+| Column  | type       | options                        |
+|---------|------------|--------------------------------|
+| user    | references | null: false, foreign_key: true |
+| product | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :product
+
 ## shipmentsテーブル
 | Column          | type       | options                        |
 |-----------------|------------|--------------------------------|
