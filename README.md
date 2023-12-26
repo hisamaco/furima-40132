@@ -15,8 +15,8 @@
 
 ### Association
 
-- belongs_to :product
-- belongs_to :shipment
+- has_many :products
+- has_many :purchases
 
 ## productsテーブル
 | Column          | type       | options                        |
