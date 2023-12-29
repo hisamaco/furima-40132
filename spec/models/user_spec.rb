@@ -12,26 +12,47 @@ RSpec.describe User, type: :model do
       end
     end
     context '新規登録できないとき' do
-      it 'nickname,email,password,last_name,first_name,
-      last_name_kana,first_name_kana,birthdayがそれぞれ空では登録できない' do
+      it 'nicknameがそれぞれ空では登録できない' do
         @user.nickname = ''
-        @user.email = ''
-        @user.password = ''
-        @user.last_name = ''
-        @user.first_name = ''
-        @user.last_name_kana = ''
-        @user.first_name_kana = ''
-        @user.birthday = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Nickname can't be blank")
+      end
+      it 'emailがそれぞれ空では登録できない' do
+        @user.email = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("Email can't be blank")
+      end
+      it 'passwordがそれぞれ空では登録できない' do
+        @user.password = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
+      end
+      it 'last_nameがそれぞれ空では登録できない' do
+        @user.last_name = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("Last name can't be blank")
+      end
+      it 'first_nameがそれぞれ空では登録できない' do
+        @user.first_name = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
+      end
+      it 'last_name_kanaがそれぞれ空では登録できない' do
+        @user.last_name_kana = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana can't be blank")
+      end
+      it 'first_name_kanaがそれぞれ空では登録できない' do
+        @user.first_name_kana = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
+      end
+      it 'birthdayがそれぞれ空では登録できない' do
+        @user.birthday = ''
+        @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
+
       it '重複したemailが存在する場合は登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
