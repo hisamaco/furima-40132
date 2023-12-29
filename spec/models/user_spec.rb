@@ -145,11 +145,14 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana 全角文字(カナ)を使用してください')
       end
-      it 'last_name_kana、first_name_kanaはひらがなでは登録できない' do
-        @user.first_name_kana = 'あああ'
+      it 'last_name_kanaはひらがなでは登録できない' do
         @user.last_name_kana = 'あああ'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana 全角文字(カナ)を使用してください')
+      end
+      it 'first_name_kanaはひらがなでは登録できない' do
+        @user.first_name_kana = 'あああ'
+        @user.valid?
         expect(@user.errors.full_messages).to include('First name kana 全角文字(カナ)を使用してください')
       end
     end
