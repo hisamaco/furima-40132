@@ -15,10 +15,10 @@
 
 ### Association
 
-- has_many :products
+- has_many :items
 - has_many :purchases
 
-## productsテーブル
+## itemsテーブル
 | Column             | type       | options                        |
 |--------------------|------------|--------------------------------|
 | product_name       | string     | null: false                    |
@@ -46,12 +46,12 @@
 | Column  | type       | options                        |
 |---------|------------|--------------------------------|
 | user    | references | null: false, foreign_key: true |
-| product | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 - has_one :shipment
 
 ## shipmentsテーブル
