@@ -43,17 +43,17 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Condition は必須です')
       end
       it 'shipping_cost_idが1では保存できない' do
-        @item.shipping_cost_id = ''
+        @item.shipping_cost_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping cost は必須です')
       end
       it 'days_to_ship_idが1では保存できない' do
-        @item.days_to_ship_id = ''
+        @item.days_to_ship_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Days to ship は必須です')
       end
       it 'prefecture_idが1では保存できない' do
-        @item.prefecture_id = ''
+        @item.prefecture_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture は必須です')
       end
