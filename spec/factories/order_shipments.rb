@@ -4,6 +4,7 @@ FactoryBot.define do
     prefecture_id  { Faker::Number.between(from: 2, to: 48) }
     city           { Faker::Address.city }
     street_address { Faker::Address.street_address }
+    bulding_name   { Faker::Address.street_name }
     phone_number   { Faker::Number.decimal_part(digits: 11) }
     token          { 'tok_abcdefghijk00000000000000000' }
   end
