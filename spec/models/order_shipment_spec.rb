@@ -63,6 +63,11 @@ RSpec.describe OrderShipment, type: :model do
         @order_shipment.valid?
         expect(@order_shipment.errors.full_messages).to include('Phone number 10桁以上11桁以内の半角数値で入力して下さい')
       end
+      it 'tokenが空では登録できない' do
+        @order_shipment.token = ''
+        @order_shipment.valid?
+        expect(@order_shipment.errors.full_messages).to include("Token can't be blank")
+      end
     end
   end
 end
