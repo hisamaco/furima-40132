@@ -1,4 +1,5 @@
 const pay = () => {
+  console.log('happy!')
   const publickey = gon.public_key
   const payjp = Payjp(publickey)
   const elements = payjp.elements();
