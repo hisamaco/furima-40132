@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe OrderShipment, type: :model do
   before do
-    @order_shipment = FactoryBot.build(:order_shipment)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @order_shipment = FactoryBot.build(:order_shipment, user_id: user.id, item_id: item.id)
   end
 
   describe '配送先情報の保存' do
