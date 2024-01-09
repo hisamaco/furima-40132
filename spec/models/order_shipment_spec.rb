@@ -13,8 +13,8 @@ RSpec.describe OrderShipment, type: :model do
         expect(@order_shipment).to be_valid
       end
       it 'building_nameが空でも保存できる' do
-        @order_form.building_name = nil
-        expect(@order_form).to be_valid
+        @order_shipment.building_name = nil
+        expect(@order_shipment).to be_valid
       end
     end
 
@@ -66,6 +66,11 @@ RSpec.describe OrderShipment, type: :model do
       end
       it 'phone_numberが9桁以下だと保存できない' do
         @order_shipment.phone_number = 123_123_123
+        @order_shipment.valid?
+        expect(@order_shipment.errors.full_messages).to include('Phone number 10桁以上11桁以内の半角数値で入力して下さい')
+      end
+      it 'phone_numberが12桁以上だと保存できない' do
+        @order_shipment.phone_number = 123_123_123_123
         @order_shipment.valid?
         expect(@order_shipment.errors.full_messages).to include('Phone number 10桁以上11桁以内の半角数値で入力して下さい')
       end
