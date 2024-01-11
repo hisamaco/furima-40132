@@ -69,3 +69,5 @@
 
 - belongs_to :order
 - belongs_to :prefecture
+
+[![Image from Gyazo](https://i.gyazo.com/3fde32f7df2d2b4c62df0a2b90670dc2.jpg)](https://gyazo.com/3fde32f7df2d2b4c62df0a2b90670dc2)
